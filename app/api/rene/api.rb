@@ -33,7 +33,7 @@ module Rene
   # end
 
   class APIv1 < Grape::API
-    format :json # zonder dit wordt xml gebruikt
+    #format :json # zonder dit wordt xml gebruikt # verplaats naar class API voor de mount
     get :test do
       "Rene" # geeft foutmelding bij xml, maar niet bij json   
     end
@@ -66,7 +66,7 @@ module Rene
   end
 
   class APIv2 < Grape::API
-    format :json
+    #format :json # verplaats naar class API voor de mount
     get :test do
       "Test Grape Api via test"
     end
@@ -82,6 +82,7 @@ module Rene
   # end
 
   class API < Grape::API
+   format :json # json gebruiken voor beide
     mount Rene::APIv1 => '/v1' # get :test nu bereikbaar via /v1/test in plaats van /test
     mount Rene::APIv2 # /test roept nu get :test aan van APIv2 en output dus "Test Grape Api via test"
   end
