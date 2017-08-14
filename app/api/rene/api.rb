@@ -76,8 +76,14 @@ module Rene
     end
   end
 
+  # class API < Grape::API
+  #   mount Rene::APIv1
+  #   mount Rene::APIv2
+  # end
+
   class API < Grape::API
-    mount Rene::APIv1
-    mount Rene::APIv2
+    mount Rene::APIv1 => '/v1' # get :test nu bereikbaar via /v1/test in plaats van /test
+    mount Rene::APIv2 # /test roept nu get :test aan van APIv2 en output dus "Test Grape Api via test"
   end
+
 end
