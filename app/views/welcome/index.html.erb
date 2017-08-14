@@ -11,8 +11,24 @@ Grape::Api, module Rene, class API, get :test
 Grape::Api, module Rene, class API, get :json 
 -->
 
+<!--
 <p>Gebruik /test of /v1/test</p>
 Grape::Api, module Rene, class API, get :test in class APIv2 of APIv1 via mount (on a path) in class API
 
 <p>Gebruik /v1/json</p>
 Grape::Api, module Rene, class API, get :json 
+-->
+
+<p>Gebruik /test of /v1/test</p>
+Grape::Api, module Rene2, class API2, get :test in class APIv2 of APIv1 via mount (on a path) in class API2
+
+<p>Gebruik /test2</p>
+Grape::Api, module Rene2, class API2, get :test2 in class APIv2 via mount in class API2
+
+<p>Gebruik /v1/json</p>
+Grape::Api, module Rene2, class API2, get :json
+
+<p>Gebruik /Rene3/test_a, /Rene3/test_b of /Rene3/test_c</p>
+<p>Gebruik /D/test_d of /E/test_e</p>
+<p>Gebruik test_f?v=F</p>
+Grape::Api, module Rene3, class API3, via mounts in class API3, met gebruik van version '...', using: :path en version '...', using: :param, parameter: 'v'
