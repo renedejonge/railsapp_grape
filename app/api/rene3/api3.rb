@@ -21,7 +21,7 @@ module Rene3
   end
 
   class API_D < Grape::API
-    version 'D', using: :path # gebruik een andere pad
+    version 'D', using: :path # gebruik een ander pad
     get :test_d do
       "test d"  
     end

@@ -65,7 +65,7 @@ module Rene
     end
   end
 
-  class APIv2 < Grape::API
+  class APIv2 < Grape::API # een geheel gewijzigde api kan beter in een aparte module, en dan mount via routes.rb?
     #format :json # verplaats naar class API voor de mount
     get :test do
       "Test Grape Api via test"
@@ -81,7 +81,7 @@ module Rene
   #   mount Rene::APIv2
   # end
 
-  class API < Grape::API
+  class API < Grape::API # Deze class heeft de "juiste" naam ten opzichte van de filenaam "api.rb" van deze file, en wordt dus door Rails gezocht en gebruikt. Voeg bovenstaande in door gebruik van mount.
    format :json # json gebruiken voor beide
     mount Rene::APIv1 => '/v1' # get :test nu bereikbaar via /v1/test in plaats van /test
     mount Rene::APIv2 # /test roept nu get :test aan van APIv2 en output dus "Test Grape Api via test"
