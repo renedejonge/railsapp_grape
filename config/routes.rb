@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   mount Rene::API => '/'
   #mount Rene2::API2 => '/'
   mount Rene3::API3 => '/'
+  mount Rene4::API => '/'
+  mount Rene5::API => '/'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

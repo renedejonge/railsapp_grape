@@ -30,5 +30,17 @@ Grape::Api, module Rene2, class API2, get :json
 
 <p>Gebruik /Rene3/test_a, /Rene3/test_b of /Rene3/test_c</p>
 <p>Gebruik /D/test_d of /E/test_e</p>
-<p>Gebruik test_f?v=F</p>
+<p>Gebruik /test_f?v=F</p>
 Grape::Api, module Rene3, class API3, via mounts in class API3, met gebruik van version '...', using: :path en version '...', using: :param, parameter: 'v'
+
+<p>Gebruik /test_g, /E/test_g, /test_g?v=2, /test_g?v=3</p>
+Grape::Api, module Rene3, class API3, via mounts in class API3, met gebruik van version '...', using: :param, parameter: 'v'
+
+<p>Gebruik /test_h, /test_h?version=yolo</p>
+Grape::Api, module Rene3, class API3, via mounts in class API3, met gebruik van version '...', using: :param, parameter: 'version'
+
+<p>Gebruik /test_i, /test_i?version=first, /test_i?version=second</p>
+Grape::Api, module Rene3, class API3, via mounts in class API3, met gebruik van version '...', using: :param, parameter: 'version'
+
+<p>Gebruik /zomaar met in de header "Accept-Version:v1", "Accept-Version:v2" of "Accept-Version:v3"</p>
+Grape::Api, modules Rene4 en Rene5, class API, via mounts in class API, met gebruik van version '...', using: :accept_version 
